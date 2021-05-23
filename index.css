@@ -1,0 +1,49 @@
+#start {
+    padding-top: 20px;
+    font-size: 20px;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: rgb(99, 97, 97);
+}
+.form {
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: rgb(99, 97, 97);
+}
+.login-form label {
+    text-align: center;
+    color: #4d4d4d;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+}
+.form input[type="text"] {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #aeacac;
+    margin-bottom: 15px;
+    box-sizing:border-box;
+}
+.form textarea {
+    width: 60%;
+    padding: 15px;
+    border: 1px solid #a2a1a1;
+    margin-bottom: 15px;
+    box-sizing:border-box;
+    border-bottom: 1px solid rgb(47, 39, 39);
+}
+.form input[type="submit"] {
+    padding: 15px;
+    background-color: #535b63;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+}
+.form select {
+    padding: 4px;
+    border: 1px solid #aeacac;
+}
+footer {
+    text-align: center;
+}
