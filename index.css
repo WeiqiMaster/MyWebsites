@@ -46,4 +46,8 @@
 }
 footer {
     text-align: center;
+    padding-bottom: 15px;
+    font-size: 15px;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: rgb(99, 97, 97);
 }
