@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
-  <h1>Happy Grocery Store</h1>
+  
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
   <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
   <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
   <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+  <h1><b>HAPPY</b> GROCERY STORE<h1>
 </div>
 
 <!-- Tab content -->
-<div id="Client" class="tabcontent">
-  <h3>Client Information</h3>
+<div id="Client" class="tabcontent" style="display: block;">
   <p>Tell us a bit about you.</p>
 	Choose your preference:
 	<!-- <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
@@ -42,18 +41,18 @@
 </div>
 
 <div id="Products" class="tabcontent">
-  <h3>Your targeted products</h3>
-  <p>We preselected products based on your restrictions.</p>
+  <h3>Your targeted products:</h3>
+  <p>We have preselected products based on your restrictions.</p>
 	 Choose items to buy:
 	 <div id="displayProduct"></div>
+   <br>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
-		Update cart with selected item(s).
+		Update cart with selected item(s)
 	</button>
 </div>
 
 <div id="Cart" class="tabcontent">
-  <h3>Cart</h3>
-  <p>Here is your cart.</p>
+  <p>Here is your cart:</p>
   <div id="displayCart"></div>
 </div>
 
