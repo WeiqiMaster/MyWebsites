@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>HAPPY GROCERY STORE</title>
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -26,17 +27,18 @@
     <option value="None">None</option>
 	</select> -->
 
-  <div>
+  <div style="margin-top: 7px;">
   <input type="checkbox" id="DairyFree" value="DairyFree" onchange="populateListProductChoices()">
   <label for="DairyFree">DairyFree</label>
+  <br>
   <input type="checkbox" id="NutsFree" value="NutsFree" onchange="populateListProductChoices()">
   <label for="NutsFree">NutsFree</label>
+  <br>
   <input type="checkbox" id="organic" value="organic" onchange="populateListProductChoices()">
   <label for="organic">Organic</label>
   <br>
-  <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-  <input type="checkbox" id="showAll" value="showAll" onchange="populateListProductChoices()">
-  <label for="showAll">No preference (check this if you want to show all available items, and all other check box will be ignored)</label>
+  <!-- <input type="checkbox" id="showAll" value="showAll" onchange="populateListProductChoices()">
+  <label for="showAll">No preference (check this if you want to show all available items, and all other check box will be ignored)</label> -->
   </div>
 </div>
 
@@ -44,15 +46,24 @@
   <h3>Your targeted products:</h3>
   <p>We have preselected products based on your restrictions.</p>
 	 Choose items to buy:
-	 <div id="displayProduct"></div>
-   <br>
+	 <div id="displayProduct" style="display: table; margin-top: 15px; margin-bottom: 17px;">
+    <!-- <table id="productTable1">
+        <tr>
+          <td style="width: 5px;"></td>
+          <td style="width: 50px;">Product Name</td>
+          <td style="width: 15px">Price</td>
+          <td style="width: 10px;">Organic</td>
+        </tr>
+    </table> -->
+   </div>
+   <hr>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
 		Update cart with selected item(s)
 	</button>
 </div>
 
 <div id="Cart" class="tabcontent">
-  <p>Here is your cart:</p>
+  <h3>Your Shopping Cart:</h3>
   <div id="displayCart"></div>
 </div>
 

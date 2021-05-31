@@ -40,35 +40,76 @@ function populateListProductChoices() {
 	//console.log(checkboxPref.checked);
 	// obtain a reduced list of products based on restrictions
     var optionArray = restrictListProducts(products, checkboxDairyFree.checked, checkboxNutsFree.checked, checkboxOrganic.checked);
-	if (document.getElementById("showAll").checked)
-	{
-		optionArray = products;
-	}
+	// if (document.getElementById("showAll").checked)
+	// {
+	// 	optionArray = products;
+	// }
 
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
-		
+
+	// var productTable = document.getElementById("productTable1");
+	// console.log(productTable);
 	for (i = 0; i < optionArray.length; i++) {
 		var productName = optionArray[i].name;
 		console.log(productName);
 		// create the checkbox and add in HTML DOM
+		
+		// let newRow = productTable.insertRow(-1);
+
+		// // Insert a cell at the end of the row
+		// let newCell = newRow.insertCell();
+
+		// // Append a text node to the cell
+		// let newText = document.createTextNode(productName);
+		// newCell.appendChild(newText);
+
+		let row = document.createElement("div");
+		row.style.display = "table-row";
 		var checkbox = document.createElement("input");
+		checkbox.style.display = "table-cell";
+		//checkbox.style.width = "5px";
+		//checkbox.className = "itemRow";
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
 		checkbox.id = productName;
 		checkbox.value = productName;
-		s2.appendChild(checkbox);
+		//s2.appendChild(checkbox);
+		row.appendChild(checkbox);
 		
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName + "\xa0 \xa0 \xa0 $" 
-		+ optionArray[i].price + "\xa0 \xa0 \xa0 organic: " + (optionArray[i].organic?"yes":"no")));
-		s2.appendChild(label);
+		let nameSpan = document.createElement("span");
+		nameSpan.style.display = "table-cell";
+		nameSpan.style.width = "250px";
+		//nameSpan.style.width = "200px";
+		nameSpan.appendChild(document.createTextNode(productName));
+		label.appendChild(nameSpan);
+
+		let priceSpan = document.createElement("span");
+		priceSpan.style.display = "table-cell";
+		priceSpan.style.width = "100px";
+		//priceSpan.style.width = "5px";
+		//priceSpan.style.float = "left";
+		priceSpan.appendChild(document.createTextNode("$" + optionArray[i].price));
+		label.appendChild(priceSpan);
+
+		let organicSpan = document.createElement("span");
+		organicSpan.style.display = "table-cell";
+		organicSpan.style.width = "200px";
+		//organicSpan.style.width = "10px";
+		organicSpan.appendChild(document.createTextNode("organic: " + (optionArray[i].organic?"yes":"no")));
+		label.appendChild(organicSpan);
+		//label.appendChild(document.createTextNode(productName + "\xa0 \xa0 \xa0 $" 
+		//+ optionArray[i].price + "\xa0 \xa0 \xa0 organic: " + (optionArray[i].organic?"yes":"no")));
+		//s2.appendChild(label);
+		row.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));    
+		s2.appendChild(row);
+		//s2.appendChild(document.createElement("br"));    
 	}
 }
 	
@@ -98,8 +139,10 @@ function selectedItems(){
 		
 	// add paragraph and total price
 	c.appendChild(para);
+	let hr = document.createElement("hr");
+	c.appendChild(hr);
 	price_h3 = document.createElement("h3")
-	price_h3.innerHTML = "Total Price is " + getTotalPrice(chosenProducts);
+	price_h3.innerHTML = "The Total Price is $" + getTotalPrice(chosenProducts);
 	c.appendChild(price_h3);
 	//c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
 		

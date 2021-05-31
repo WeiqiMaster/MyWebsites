@@ -12,7 +12,8 @@
 }
 
 .tablinks {
-  font-size: 20px;
+  color: #098509;
+  font-size: 24px;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -42,11 +43,12 @@
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  min-height: 80vh;
 }
 
 
 footer {
-  position: fixed;
+  position: relative;
   text-align: center;
   bottom: 15px;
   font-size: 15px;
@@ -57,28 +59,43 @@ footer {
 body {
   font-family: 'Muli',sans-serif;
   background-color: #dddddd;
+  color: #474343;
 }
 
 h1 { 
-  color: #494747; font-family: 'Lato', sans-serif; font-size: 24px; font-weight: 1; line-height: 28px;
-  margin-right: 20px;
+  color: #293250; font-family: 'Lato', sans-serif; font-size: 24px; font-weight: 1; line-height: 28px;
+  margin-right: 50px;
   margin-top: 10px;
   float: right;
 }
 
 b {
+  color: #6DD47E;
   font-weight: 1000;
 }
 
 #addCart {
-  padding: 10px;
+  padding: 7px;
   background-color: #cac6c6;
   border: 0;
   box-sizing: border-box;
   cursor: pointer;
+  margin-left: 3px;
+  margin-top: 10px;
   /* color: #f1f1f1; */
 }
 
 #addCart:hover {
   background-color: rgb(171, 168, 168);
+}
+
+.itemRow {
+  width: 100px;
+}
+
+hr {
+  color: rgb(123, 123, 123);
+  height: 1.2px;
+  border: none;
+  background-color: rgb(123, 123, 123);
 }

@@ -111,9 +111,27 @@ var products = [
 function restrictListProducts(prods, preferDairyFree, preferNutsFree, preferOrganic) {
 	let products_filtered = [];
 	for (let i=0; i<prods.length; i+=1) {
-		if ((prods[i].dairyFree == preferDairyFree) && (prods[i].nutsFree == preferNutsFree) && (prods[i].organic == preferOrganic)){
+		let shallAdd = true;
+		if (preferDairyFree && (prods[i].dairyFree == false))
+		{
+			shallAdd = false;
+		}
+		if (preferNutsFree && !prods[i].nutsFree)
+		{
+			shallAdd = false;
+		}
+		if (preferOrganic && !prods[i].organic)
+		{
+			shallAdd = false;
+		}
+
+		if (shallAdd)
+		{
 			products_filtered.push(prods[i]);
 		}
+		// if ((prods[i].dairyFree == preferDairyFree) && (prods[i].nutsFree == preferNutsFree) && (prods[i].organic == preferOrganic)){
+		// 	products_filtered.push(prods[i]);
+		// }
 		// else if ((restriction == "NutsFree") && (prods[i].nutsFree == true) && (prods[i].organic == preferOrganic)){
 		// 	products_filtered.push(prods[i]);
 		// }
