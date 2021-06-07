@@ -30,6 +30,11 @@
   background-size: 100% 50%;
   text-align:left;
   padding:0.25em 3em 0.25em 1em;
+  cursor: pointer;
+}
+
+button[disabled] {
+  cursor: not-allowed !important;
 }
 
 /* Change background color of buttons on hover */

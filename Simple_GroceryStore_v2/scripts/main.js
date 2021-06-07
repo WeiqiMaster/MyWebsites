@@ -15,13 +15,16 @@ function openInfo(id, tabName) {
 	tablinks = document.getElementsByClassName("tablinks");
 	for (i = 0; i < tablinks.length; i++) {
 		tablinks[i].className = tablinks[i].className.replace(" active", "");
-		if (tablinks[i].id == id && i != 0)
+		if (tablinks[i].id == id)
 		{
 			for (j = i + 1; j < tablinks.length; j++) 
 			{
 				tablinks[j].disabled = true;
 			}
-			tablinks[i - 1].disabled = false;
+			if (i != 0)
+			{
+				tablinks[i - 1].disabled = false;
+			}
 		}
 	}
 
