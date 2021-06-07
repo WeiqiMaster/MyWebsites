@@ -186,7 +186,7 @@ function selectedItems(){
 	c.innerHTML = tableContent;
 
 	price_h3 = document.createElement("h3");
-	price_h3.innerHTML = "The total price of your item is $" + getTotalPrice(chosenProducts);
+	price_h3.innerHTML = "The total price of your item(s) is $" + getTotalPrice(chosenProducts);
 	c.appendChild(price_h3);
 	//populateCheckoutBoard();
 }
