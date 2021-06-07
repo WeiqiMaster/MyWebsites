@@ -4,7 +4,7 @@
 
 var products = [
 	{
-		name: "brocoli",
+		name: "broccoli",
 		dairyFree: true,
 		nutsFree: true,
 		price: 1.99,
@@ -60,7 +60,7 @@ var products = [
 		organic: false
 	},
 	{
-		name: "chick legs 1kg",
+		name: "chicken legs 1kg",
 		dairyFree: true,
 		nutsFree: true,
 		price: 10.33,

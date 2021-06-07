@@ -30,7 +30,10 @@
     <label for="showAll">No preference (check this if you want to show all available items, and all other check box will be ignored)</label> -->
   </div>
   <br>
-  <div class="button_cont"><button class="btnCont" id="confirm1" onclick="confirm(event)"><span>Confirm</button></div>
+  <div class="button_cont">
+    <button class="btnCont" id="confirm1" onclick="confirm(event)"><span>Confirm</button>
+    <button class="btnCont" id="confirm0" onclick="confirm(event)"><span>Skip</button>
+  </div>
 </div>
 
 <div id="Client" class="tabcontent" style="display: block;">
@@ -127,6 +130,11 @@
       <td><input type="radio" id="timeSlot6" name="timeSlot" value="16:00-17:00;;5.99"></td>
       <td><label for="timeSlot6">16:00-17:00</label></td>
       <td>$5.99</td>
+    </tr>
+    <tr>
+      <td><input type="radio" id="timeSlot7" name="timeSlot" value="Pickup"></td>
+      <td><label for="timeSlot7">Pickup</label></td>
+      <td>Free</td>
     </tr>
   </table>
   <br>

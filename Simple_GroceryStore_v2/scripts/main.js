@@ -17,9 +17,11 @@ function openInfo(id, tabName) {
 		tablinks[i].className = tablinks[i].className.replace(" active", "");
 		if (tablinks[i].id == id && i != 0)
 		{
-			// for (j = 0; j < i; j++) 
-			// {
-				tablinks[i - 1].disabled = false;
+			for (j = i + 1; j < tablinks.length; j++) 
+			{
+				tablinks[j].disabled = true;
+			}
+			tablinks[i - 1].disabled = false;
 		}
 	}
 
@@ -35,6 +37,10 @@ function confirm(evt)
 	console.log(evt.currentTarget.id);
 	switch (evt.currentTarget.id)
 	{
+		case "confirm0":
+			tab = document.getElementById('navPref');
+			console.log(tab);
+			break;
 		case "confirm1":
 			tab = document.getElementById('navPref');
 			console.log(tab);
@@ -215,18 +221,32 @@ function populateCheckoutBoard()
 
 	price_h3 = document.createElement("h3");
 
+	let needDeliv = false;
+
 	//document.getElementById("finalCart").innerHTML = document.getElementById("displayCart").innerHTML;
 	let del = document.getElementsByName("timeSlot");
 	for (i = 0; i < del.length; i++)
 	{
 		if (del[i].checked)
 		{
+			if (i == 6)
+			{
+				document.getElementById("finalDeliveryTime").innerHTML = "Pickup";
+				document.getElementById("finalDeliveryPrice").innerHTML = "Free";
+				break;
+			}
+			needDeliv = true;
 			document.getElementById("finalDeliveryTime").innerHTML = del[i].value.split(";;")[0];
 			document.getElementById("finalDeliveryPrice").innerHTML = "$" + del[i].value.split(";;")[1];
 			let price = parseFloat(getTotalPrice(chosenProducts)) + parseFloat(del[i].value.split(";;")[1]);
-			price_h3.innerHTML = "The Total Price is $" + (price);
+			price_h3.innerHTML = "The Total Price is $" + price.toFixed(2);
 			break;
 		}
+	}
+
+	if (needDeliv == false)
+	{
+		price_h3.innerHTML = "The Total Price is $" + getTotalPrice(chosenProducts);
 	}
 	document.getElementById("final_price").innerHTML = "";
 	document.getElementById("final_price").appendChild(price_h3);
