@@ -1,0 +1,178 @@
+/* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  /* border: 1px solid #ccc; */
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 650;
+  color: white;
+  font-size: 14px;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  background:
+    linear-gradient(-120deg, transparent 1em, #0099C3 1.05em , #0099C3 1.5em, transparent 1.45em, transparent 2em, #0099C3 2.05em) top no-repeat,
+    linear-gradient(300deg, transparent 1em, #0099C3 1.05em , #0099C3 1.5em, transparent 1.45em, transparent 2em, #0099C3 2.05em) bottom no-repeat ;
+  background-size: 100% 50%;
+  text-align:left;
+  padding:0.25em 3em 0.25em 1em;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  /* background-color: #ddd; */
+  background:
+  linear-gradient(-120deg, transparent 1em, #006780 1.05em , #006780 1.5em, transparent 1.45em, transparent 2em, #006780 2.05em) top no-repeat,
+  linear-gradient(300deg, transparent 1em, #006780 1.05em , #006780 1.5em, transparent 1.45em, transparent 2em, #006780 2.05em) bottom no-repeat ;
+  background-size: 100% 50%;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  /* background-color: #ccc; */
+  background:
+    linear-gradient(-120deg, transparent 1em, #003948 1.05em , #003948 1.5em, transparent 1.45em, transparent 2em, #003948 2.05em) top no-repeat,
+    linear-gradient(300deg, transparent 1em, #003948 1.05em , #003948 1.5em, transparent 1.45em, transparent 2em, #003948 2.05em) bottom no-repeat ;
+    background-size: 100% 50%;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  min-height: 73vh;
+}
+
+
+footer {
+  position: relative;
+  text-align: center;
+  bottom: 15px;
+  font-size: 15px;
+  font-family: Tahoma, Geneva, sans-serif;
+  color: rgb(99, 97, 97);
+}
+
+body {
+  /* font-family: 'Muli',sans-serif; */
+
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #f7f7f7;
+  color: #474343;
+}
+
+h1 { 
+  color: #293250; font-family: 'Lato', sans-serif; font-size: 24px; font-weight: 1; line-height: 28px;
+  text-align:center;
+  margin-bottom: 20px;
+  /* margin-right: 50px;
+  margin-top: 10px;
+  float: right; */
+}
+
+b {
+  /* color: #6DD47E; */
+  color: #0099C3;
+  font-weight: 1000;
+}
+
+#addCart {
+  padding: 7px;
+  background-color: #cac6c6;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-left: 3px;
+  margin-top: 10px;
+  /* color: #f1f1f1; */
+}
+
+#addCart:hover {
+  background-color: rgb(171, 168, 168);
+}
+
+.itemRow {
+  width: 100px;
+}
+
+hr {
+  color: rgb(123, 123, 123);
+  height: 1.2px;
+  border: none;
+  background-color: rgb(123, 123, 123);
+}
+
+/* #xx {
+  margin:1em;
+  border:none;
+  padding:0.25em 3em 0.25em 1em;
+  text-align:left;
+  background:
+    linear-gradient(-120deg, transparent 1em, #0099C3 1.05em , #0099C3 1.5em, transparent 1.45em, transparent 2em, #0099C3 2.05em) top no-repeat,
+    linear-gradient(300deg, transparent 1em, #0099C3 1.05em , #0099C3 1.5em, transparent 1.45em, transparent 2em, #0099C3 2.05em) bottom no-repeat ;
+  background-size: 100% 50%;
+  color:white
+} */
+
+.btnCont {
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: 4px;
+  background: linear-gradient(to right, #0099C3, #057796) !important;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 17px;
+  padding: 5px;
+  width: 150px;
+  transition: all 0.4s;
+  cursor: pointer;
+  margin: 5px;
+  margin-left: 0px;
+}
+.btnCont span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+.btnCont span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.btnCont:hover span {
+  padding-right: 25px;
+}
+.btnCont:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+input[type="text"] {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #aeacac;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing:border-box;
+}

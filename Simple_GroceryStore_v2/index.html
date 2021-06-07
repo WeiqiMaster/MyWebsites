@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HAPPY GROCERY STORE</title>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<h1><b>HAPPY</b> GROCERY STORE</h1>
+  
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button id="entry" class="tablinks" onclick="openInfo('entry', 'enterAddress')">ENTER YOUR ADDRESS</button>
+  <button id="navPref" class="tablinks" onclick="openInfo('navPref', 'Client')">CHOOSE YOUR PREFERENCE</button>
+  <button id="navSelectPro" class="tablinks" onclick="openInfo('navSelectPro', 'Products')">SELECT YOUR PRODUCTS</button>
+  <button id="navReview" class="tablinks" onclick="openInfo('navReview', 'Cart')">REVIEW THE CART</button>
+  <button id="navChooseDeliv" class="tablinks" onclick="openInfo('navChooseDeliv', 'delivTime')">CHOOSE YOUR DELIVERY TIME</button>
+  <button id="navCheckout" class="tablinks" onclick="openInfo('navCheckout', 'checkout')">CHECKOUT</button>
+</div>
+
+<!-- Tab content -->
+<div id="enterAddress" class="tabcontent" style="display: block;">
+  <p>Enter Your Address:</p>
+  <div style="margin-top: 7px;">
+    <input type="text">
+    <!-- <input type="checkbox" id="showAll" value="showAll" onchange="populateListProductChoices()">
+    <label for="showAll">No preference (check this if you want to show all available items, and all other check box will be ignored)</label> -->
+  </div>
+  <br>
+  <div class="button_cont"><button class="btnCont" id="confirm1" onclick="confirm(event)"><span>Confirm</button></div>
+</div>
+
+<div id="Client" class="tabcontent" style="display: block;">
+  <p>Tell us a bit about you.</p>
+	Choose your preference:
+	<!-- <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value=""></option>
+	<option value="DairyFree">DairyFree</option>
+    <option value="NutsFree">NutsFree</option>
+    <option value="None">None</option>
+	</select> -->
+
+  <div style="margin-top: 7px;">
+    <input type="checkbox" id="DairyFree" value="DairyFree" onchange="populateListProductChoices()">
+    <label for="DairyFree">DairyFree</label>
+    <br>
+    <input type="checkbox" id="NutsFree" value="NutsFree" onchange="populateListProductChoices()">
+    <label for="NutsFree">NutsFree</label>
+    <br>
+    <input type="checkbox" id="organic" value="organic" onchange="populateListProductChoices()">
+    <label for="organic">Organic</label>
+    <br>
+    <!-- <input type="checkbox" id="showAll" value="showAll" onchange="populateListProductChoices()">
+    <label for="showAll">No preference (check this if you want to show all available items, and all other check box will be ignored)</label> -->
+  </div>
+  <br>
+  <div class="button_cont"><button class="btnCont" id="confirm2" onclick="confirm(event)"><span>Confirm</button></div>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your targeted products:</h3>
+  <p>We have preselected products based on your restrictions.</p>
+	 Choose items to buy:
+	 <div id="displayProduct" style="display: table; margin-top: 15px; margin-bottom: 17px;">
+    <!-- <table id="productTable1">
+        <tr>
+          <td style="width: 5px;"></td>
+          <td style="width: 50px;">Product Name</td>
+          <td style="width: 15px">Price</td>
+          <td style="width: 10px;">Organic</td>
+        </tr>
+    </table> -->
+   </div>
+   <hr>
+   <div>
+	 <button id="confirm3" type="button" class="btnCont" onclick="selectedItems(); confirm(event)" style="width: 390px;">
+		Update cart with selected item(s)
+	</button>
+  </div>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Your Shopping Cart:</h3>
+  <div id="displayCart"></div>
+  <!-- <div class="button_cont"><button class="btnCont" id="confirm4" onclick="document.getElementById('navSelectPro').click()"><span>Add More</button></div> -->
+    <div class="button_cont"><button class="btnCont" id="confirm4" onclick="confirm(event)"><span>Confirm</button></div>
+</div>
+
+
+<div id="delivTime" class="tabcontent">
+  <h3 style="margin-left: 22px;">Pick a Time Slot</h3>
+  <table style="border: none;">
+    <tr>
+      <th></th>
+      <th style="text-align: left;">Time Slot</th>
+      <th>Delivery Fee</th>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="timeSlot1" name="timeSlot" value="11:00-12:00;;4.99"></td>
+      <td style="width: 90px;"><label for="timeSlot1">11:00-12:00</label></td>
+      <td>$4.99</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="timeSlot2" name="timeSlot" value="12:00-13:00;;4.99"></td>
+      <td><label for="timeSlot2">12:00-13:00</label></td>
+      <td>$4.99</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="timeSlot3" name="timeSlot" value="13:00-14:00;;3.99"></td>
+      <td><label for="timeSlot3">13:00-14:00</label></td>
+      <td>$3.99</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="timeSlot4" name="timeSlot" value="14:00-15:00;;2.99"></td>
+      <td><label for="timeSlot4">14:00-15:00</label></td>
+      <td>$2.99</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="timeSlot5" name="timeSlot" value="15:00-16:00;;3.99"></td>
+      <td><label for="timeSlot5">15:00-16:00</label></td>
+      <td>$3.99</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="timeSlot6" name="timeSlot" value="16:00-17:00;;5.99"></td>
+      <td><label for="timeSlot6">16:00-17:00</label></td>
+      <td>$5.99</td>
+    </tr>
+  </table>
+  <br>
+  <div class="button_cont"><button class="btnCont" id="confirm5" onclick="confirm(event);populateCheckoutBoard();"><span>Confirm</button></div>
+</div>
+
+<div id="checkout" class="tabcontent">
+  <h3>Your Shopping Cart:</h3>
+  <div id="finalCart"></div>
+  <br>
+  <div id="finalDeliveryInfo">
+    <h3>Delivery Information:</h3>
+    <table><tr><td id="finalDeliveryTime" style="width: 100px;"></td><td id="finalDeliveryPrice"></td></tr></table>
+    <br>
+    <div class="button_cont"><button class="btnCont" onclick="window.alert('Your Order has been revieved!');"><span>Place Order</button></div>
+  </div>
+</div>
+
+
+
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+<script type="text/javascript">
+  window.onload = populateListProductChoices();
+  window.onload = function() 
+  {
+    document.getElementById('entry').click();
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].disabled = true;
+    }
+  }
+</script>
+
+<br>
+<br>
+<br>
+<footer>Website designed by <i>Peter Pan</i></footer>
+</body>
+</html>
