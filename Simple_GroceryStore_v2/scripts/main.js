@@ -153,64 +153,82 @@ function populateListProductChoices() {
 // We build a paragraph to contain the list of selected items, and the total price
 
 function selectedItems(){
-	
 	var ele = document.getElementsByName("product");
 	var chosenProducts = [];
-	
+
 	var c = document.getElementById('displayCart');
 	c.innerHTML = "";
 	
 	let tableContent = "<table><tr><th style='width: 250px; text-align: left;'>Product Name  </th><th>Product Price  </th></tr>";
 
 	// build list of selected item
-	var para = document.createElement("P");
-	//para.innerHTML = "You selected : ";
-	//para.appendChild(document.createElement("br"));
 	for (i = 0; i < ele.length; i++) { 
 		if (ele[i].checked) {
-			para.appendChild(document.createTextNode(ele[i].value));
-			para.appendChild(document.createElement("br"));
 			chosenProducts.push(ele[i].value);
 			for (j = 0; j < products.length; j++)
 			{
 				if (products[j].name == ele[i].value)
 				{
-					tableContent += "<tr><td>" + ele[i].value + "</td><td>" + products[j].price + "</td></tr>";
+					tableContent += "<tr><td>" + ele[i].value + "</td><td>$" + products[j].price + "</td></tr>";
 					break;
 				}
 			}
 		}
 	}
 
-	tableContent += "</table>";
+	tableContent += "</table><hr>";
 	c.innerHTML = tableContent;
-	
-	//tableDiv.innerHTML = tableContent;
 
-		
-	// // add paragraph and total price
-	// c.appendChild(para);
-	// let hr = document.createElement("hr");
-	// c.appendChild(hr);
-	price_h3 = document.createElement("h3")
-	price_h3.innerHTML = "The Total Price is $" + getTotalPrice(chosenProducts);
+	price_h3 = document.createElement("h3");
+	price_h3.innerHTML = "The total price of your item is $" + getTotalPrice(chosenProducts);
 	c.appendChild(price_h3);
-	//c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
-	populateCheckoutBoard();
+	//populateCheckoutBoard();
 }
 
 function populateCheckoutBoard()
-{
-	document.getElementById("finalCart").innerHTML = document.getElementById("displayCart").innerHTML;
+{	
+	var ele = document.getElementsByName("product");
+	var chosenProducts = [];
+
+	var c = document.getElementById('finalCart');
+	c.innerHTML = "";
+	
+	let tableContent = "<table><tr><th style='width: 250px; text-align: left;'>Product Name  </th><th>Product Price  </th></tr>";
+
+	// build list of selected item
+	for (i = 0; i < ele.length; i++) { 
+		if (ele[i].checked) {
+			chosenProducts.push(ele[i].value);
+			for (j = 0; j < products.length; j++)
+			{
+				if (products[j].name == ele[i].value)
+				{
+					tableContent += "<tr><td>" + ele[i].value + "</td><td>$" + products[j].price + "</td></tr>";
+					break;
+				}
+			}
+		}
+	}
+
+	tableContent += "</table><hr>";
+	c.innerHTML = tableContent;
+
+	price_h3 = document.createElement("h3");
+
+	//document.getElementById("finalCart").innerHTML = document.getElementById("displayCart").innerHTML;
 	let del = document.getElementsByName("timeSlot");
 	for (i = 0; i < del.length; i++)
 	{
 		if (del[i].checked)
 		{
 			document.getElementById("finalDeliveryTime").innerHTML = del[i].value.split(";;")[0];
-			document.getElementById("finalDeliveryPrice").innerHTML = del[i].value.split(";;")[1];
+			document.getElementById("finalDeliveryPrice").innerHTML = "$" + del[i].value.split(";;")[1];
+			let price = parseFloat(getTotalPrice(chosenProducts)) + parseFloat(del[i].value.split(";;")[1]);
+			price_h3.innerHTML = "The Total Price is $" + (price);
 			break;
 		}
 	}
+	document.getElementById("final_price").innerHTML = "";
+	document.getElementById("final_price").appendChild(price_h3);
 	
 }

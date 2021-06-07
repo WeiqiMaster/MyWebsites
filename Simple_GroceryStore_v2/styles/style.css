@@ -33,20 +33,19 @@
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
-  /* background-color: #ddd; */
+/* .tab button:hover {
   background:
   linear-gradient(-120deg, transparent 1em, #006780 1.05em , #006780 1.5em, transparent 1.45em, transparent 2em, #006780 2.05em) top no-repeat,
   linear-gradient(300deg, transparent 1em, #006780 1.05em , #006780 1.5em, transparent 1.45em, transparent 2em, #006780 2.05em) bottom no-repeat ;
   background-size: 100% 50%;
-}
+} */
 
 /* Create an active/current tablink class */
 .tab button.active {
   /* background-color: #ccc; */
   background:
-    linear-gradient(-120deg, transparent 1em, #003948 1.05em , #003948 1.5em, transparent 1.45em, transparent 2em, #003948 2.05em) top no-repeat,
-    linear-gradient(300deg, transparent 1em, #003948 1.05em , #003948 1.5em, transparent 1.45em, transparent 2em, #003948 2.05em) bottom no-repeat ;
+    linear-gradient(-120deg, transparent 1em, #006780 1.05em , #006780 1.5em, transparent 1.45em, transparent 2em, #006780 2.05em) top no-repeat,
+    linear-gradient(300deg, transparent 1em, #006780 1.05em , #006780 1.5em, transparent 1.45em, transparent 2em, #006780 2.05em) bottom no-repeat ;
     background-size: 100% 50%;
 }
 

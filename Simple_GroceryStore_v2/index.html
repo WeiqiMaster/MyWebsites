@@ -18,6 +18,7 @@
   <button id="navReview" class="tablinks" onclick="openInfo('navReview', 'Cart')">REVIEW THE CART</button>
   <button id="navChooseDeliv" class="tablinks" onclick="openInfo('navChooseDeliv', 'delivTime')">CHOOSE YOUR DELIVERY TIME</button>
   <button id="navCheckout" class="tablinks" onclick="openInfo('navCheckout', 'checkout')">CHECKOUT</button>
+  &#9989;
 </div>
 
 <!-- Tab content -->
@@ -98,32 +99,32 @@
       <th>Delivery Fee</th>
     </tr>
     <tr>
-      <td><input type="checkbox" id="timeSlot1" name="timeSlot" value="11:00-12:00;;4.99"></td>
+      <td><input type="radio" id="timeSlot1" name="timeSlot" value="11:00-12:00;;4.99"></td>
       <td style="width: 90px;"><label for="timeSlot1">11:00-12:00</label></td>
       <td>$4.99</td>
     </tr>
     <tr>
-      <td><input type="checkbox" id="timeSlot2" name="timeSlot" value="12:00-13:00;;4.99"></td>
+      <td><input type="radio" id="timeSlot2" name="timeSlot" value="12:00-13:00;;4.99"></td>
       <td><label for="timeSlot2">12:00-13:00</label></td>
       <td>$4.99</td>
     </tr>
     <tr>
-      <td><input type="checkbox" id="timeSlot3" name="timeSlot" value="13:00-14:00;;3.99"></td>
+      <td><input type="radio" id="timeSlot3" name="timeSlot" value="13:00-14:00;;3.99"></td>
       <td><label for="timeSlot3">13:00-14:00</label></td>
       <td>$3.99</td>
     </tr>
     <tr>
-      <td><input type="checkbox" id="timeSlot4" name="timeSlot" value="14:00-15:00;;2.99"></td>
+      <td><input type="radio" id="timeSlot4" name="timeSlot" value="14:00-15:00;;2.99"></td>
       <td><label for="timeSlot4">14:00-15:00</label></td>
       <td>$2.99</td>
     </tr>
     <tr>
-      <td><input type="checkbox" id="timeSlot5" name="timeSlot" value="15:00-16:00;;3.99"></td>
+      <td><input type="radio" id="timeSlot5" name="timeSlot" value="15:00-16:00;;3.99"></td>
       <td><label for="timeSlot5">15:00-16:00</label></td>
       <td>$3.99</td>
     </tr>
     <tr>
-      <td><input type="checkbox" id="timeSlot6" name="timeSlot" value="16:00-17:00;;5.99"></td>
+      <td><input type="radio" id="timeSlot6" name="timeSlot" value="16:00-17:00;;5.99"></td>
       <td><label for="timeSlot6">16:00-17:00</label></td>
       <td>$5.99</td>
     </tr>
@@ -135,13 +136,14 @@
 <div id="checkout" class="tabcontent">
   <h3>Your Shopping Cart:</h3>
   <div id="finalCart"></div>
-  <br>
-  <div id="finalDeliveryInfo">
+  <!-- <hr style="height: 4px;"> -->
+  <div id="finalDeliveryInfo" style="margin-top: 19px;">
     <h3>Delivery Information:</h3>
     <table><tr><td id="finalDeliveryTime" style="width: 100px;"></td><td id="finalDeliveryPrice"></td></tr></table>
-    <br>
-    <div class="button_cont"><button class="btnCont" onclick="window.alert('Your Order has been revieved!');"><span>Place Order</button></div>
+    <hr>
   </div>
+  <div id="final_price"></div>
+  <div class="button_cont"><button class="btnCont" onclick="window.alert('Your Order has been revieved!');"><span>Place Order</button></div>
 </div>
 
 
