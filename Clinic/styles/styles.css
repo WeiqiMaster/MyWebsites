@@ -12,3 +12,7 @@ p{
 .name1{
     font: italic bold ;
 }
+
+b, strong{
+    color: #3b3b3b;
+}

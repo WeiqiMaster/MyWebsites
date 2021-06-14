@@ -41,9 +41,9 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     It is a good way to list of prices, or services in a business website
     https://getbootstrap.com/docs/5.0/content/tables/
     -->
-    <table class="table table-info table-hover">
+    <table class="table table-info">
         <thead>
-            <tr onclick="document.getElementById('selectService').click();">
+            <tr>
                 <th scope="col"><h2>Service</h2></th>
                 <th scope="col"><h2>Description</h2></th>
             </tr>
@@ -62,7 +62,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                 <td>Dry Needling, also referred to as Intramuscular Stimulation (IMS), is a technique used to reduce muscle tension and quickly and effectively treat muscular pain.</td>
             </tr>
             <tr>
-                <td>Pediatric Physiotherapy</td>
+                <td>Pediatric</td>
                 <td>Pediatric physiotherapy is tailored, customized physiotherapy for babies and children ages 0 to 18.</td>
             </tr>
             <tr>
@@ -87,29 +87,80 @@ Many websites will use what is called CSS grid layouts, where you will have a he
             </label>
         </div> -->
         <div>
-            Choose a Sevice:
+            <h2>Choose the sevice(s) you want:</h2>
             <br>
-            <button type="button" class="btn btn-warning">Manual Therapy</button>
+            <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+            <label class="btn btn-outline-success" for="btn-check-outlined">Manual Therapy</label>
+            <input type="checkbox" class="btn-check" id="btn-check-outlined2" autocomplete="off">
+            <label class="btn btn-outline-success" for="btn-check-outlined2">Acupuncture</label>
+            <input type="checkbox" class="btn-check" id="btn-check-outlined3" autocomplete="off">
+            <label class="btn btn-outline-success" for="btn-check-outlined3">Dry Needling</label>
+            <input type="checkbox" class="btn-check" id="btn-check-outlined4" autocomplete="off">
+            <label class="btn btn-outline-success" for="btn-check-outlined4">Pediatric</label>
+            <input type="checkbox" class="btn-check" id="btn-check-outlined5" autocomplete="off">
+            <label class="btn btn-outline-success" for="btn-check-outlined5">Concussions</label>
+
+            <!-- <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">Manual Therapy
+                </label>
+            </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">Acupuncture
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">Dry Needling
+                </label>
+              </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">Pediatric Physiotherapy
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">Concussions
+                </label>
+            </div> -->
+
+            <!-- <button type="button" class="btn btn-warning">Manual Therapy</button>
             <button type="button" class="btn btn-warning">Acupuncture</button>
             <button type="button" class="btn btn-warning">Dry Needling</button>
             <button type="button" class="btn btn-warning">Pediatric Physiotherapy</button>
             <button type="button" class="btn btn-warning">Concussions</button>
-            
+             -->
+
+            <br><br>
+            <h2>Select a date and time:</h2>
             <br>
-            Select a date and time:<br>
             <input type="datetime-local" ><br><br>
-            Enter Your COntact Information:<br>
-            Name:<br><input type="text">
+            
+            <h2>Enter Your Contact Information:</h2>
             <br>
-            CellPhone:<br>
-            <input type="text">
+            <div class="input-group">
+                <span class="input-group-text">First and last name</span>
+                <input type="text" aria-label="First name" class="form-control">
+                <input type="text" aria-label="Last name" class="form-control">
+            </div>
+            <br>
+            
+            <div class="input-group">
+                <span class="input-group-text">Cellphone Number</span>
+                <input type="text" aria-label="First name" class="form-control">
+            </div>
+            <br>
+            <div>
+                <button type="button" class="btn btn-primary" onclick="window.alert('We have recieved your appointment!');">Submit</button>
+            </div>
+            <br>
+            <h1>Meet the Physicians!</h1>
         </div>
     </div>
 
 
-    <div>
-        <button type="button" class="btn btn-primary" onclick="window.alert('We have recieved your appointment!');">Submit</button>
-    </div>
 
 
 
@@ -198,12 +249,11 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     https://getbootstrap.com/docs/5.0/components/card/
     -->
 
-    <h1>Meet the Physicians!</h1>
     <div class="row justify-content-around">
         <div class="card" style="width: 20rem;">
             <img src="images/doctor1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <p class="card-text"><b>DAVIDSON SOLOMON</b></p>
+                <p class="card-text"><strong style="color: #3b3b3b;">DAVIDSON SOLOMON</strong></p>
                 <p class="card-text">Registered Physiotherapist</p>
                 <p class="card-text">
                     Davidson has been practising Registered Massage Therapy since 2002. 
